@@ -1,0 +1,152 @@
+Question 1. Analyze the time complexity of the following Java code and suggest a way to improve it:
+
+	int sum = 0;
+
+	for(int i = 1; i <= n; i++) {
+
+		for(int j = 1; j <= i; j++) {
+
+			sum++;
+
+		}
+
+	}
+
+Solution :
+
+The time complexity of this code is O(n^2) as it uses nested loops, where the outer loop runs n times and the inner
+loop runs i times where i varies from 1 to n.
+
+
+
+Question 2: Find the value of T(2) for the recurrence relation T(n) = 3T(n-1) + 12n, given that T(0) = 5.
+
+T(n) = 3T(n-1) + 12n
+
+T(1) = 3T(0) + 12
+
+=> T(1) = 15 + 12 = 27
+
+T(2) = 3T(1) + 12 * 2
+
+=>T(2) = 3 * 27 + 24 = 81 + 24
+
+Hence T(2) = 105.
+
+
+
+Question 3: Given a recurrence relation, solve it using a substitution method. Relation : T(n) = T(n - 1) + c.
+
+Let the solution be T(n) = O(n), now let’s prove this using the induction method.
+
+
+For that to happen T(n) <= cn where c is some constant.
+
+T(n) = T(n - 1) + c
+
+T(n - 1) = T(n - 2) + c
+
+T(n - 2) = T(n - 3) + c
+
+|
+
+|
+
+T(2) = T(1) + c
+
+—------------------------ Adding all above equations
+
+T(n) = T(1) + cn
+
+Let us assume T(1) to be a constant value.
+
+T(n) = k + cn
+
+Therefore, T(n) <= cn
+
+Hence we can conclude T(n) = O(n).
+
+
+Question 4: Given a recurrence relation: T(n) = 16T(n/4) + n^2 logn.
+Find the time complexity of this relation using the master theorem.
+
+T(n) = 16T(n/4) + n^2logn
+
+Here, a = 16, b = 4, k = 2, p = 1
+
+b^k = 4^2 = 16
+
+Here, a = b^k and p > -1
+
+Hence T(n) = θ(nlogab * logp+1n)
+
+Therefore T(n) = θ(nlog164 * log1+1n) = θ(n1/2log2n)
+
+
+
+Question 5: Solve the following recurrence relation using recursion tree method
+
+T(n) = 2T(n/2) + n
+
+               T(n)
+               /    \
+          T(n/2)    T(n/2)
+          /   \     /    \
+    T(n/4) T(n/4) T(n/4) T(n/4)
+      ...    ...    ...    ...
+
+
+Total Work = (number of levels) * (work done at each level)
+           = log base 2 of n * n
+           = n * log2 n
+
+
+T(n) = O(nlog2n)
+
+
+
+Question 6. T(n) = 2T(n/2) + K, Solve using Recurrence tree method.
+
+
+T(n) = 2T(n/2) + K
+
+              	 T(n)
+              /        \
+        T(n/2)          T(n/2)
+       /     \         /      \
+   T(n/4)  T(n/4)   T(n/4)  T(n/4)
+   /   \   /   \    /   \    /   \
+T(n/8) T(n/8) T(n/8) T(n/8) T(n/8) T(n/8)
+   .      .       .        .        .
+   .      .       .        .        .
+
+
+Calculate cost at each level
+
+Level 0 = K
+
+Level 1 = K + K = 2K
+
+Level 2 = K + K + K + K= 4K and so on…
+
+Calculate number of nodes at each level
+
+Level 0 = 2^0 = 1
+
+Level 1 = 2^1 = 2
+
+Level 2 = 2^2 = 4 and so on…
+
+Let's put the values into the formulae,
+
+T(n) = K + 2*K + 4*K + .... + log(n) times + O(1) * n
+
+T(n) = K(1 + 2 + 4 + .... + log(n) times) + O(n)
+
+T(n) = K(2^0 + 2^1 + 2^2 + ....+ log(n) times + O(n)
+
+In the GP formed above, a = 1 and r = 2, after solving this we get, T(n) = K * (1 / (2 - 1)) + O(n)
+
+T(n) = K + O(n)
+
+T(n) = O(n)

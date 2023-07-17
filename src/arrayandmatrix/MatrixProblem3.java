@@ -1,8 +1,8 @@
-package matrix;
+package arrayandmatrix;
 
 import java.util.Scanner;
 
-public class Problem3 {
+public class MatrixProblem3 {
     public static void main(String[] args) {
 
         int m, n;

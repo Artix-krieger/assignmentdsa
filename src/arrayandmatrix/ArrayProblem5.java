@@ -1,6 +1,6 @@
-package array;
+package arrayandmatrix;
 
-public class Problem5 {
+public class ArrayProblem5 {
     static int firstPeakElement(int[] arr) {
         int element = 0;
         int n = arr.length;

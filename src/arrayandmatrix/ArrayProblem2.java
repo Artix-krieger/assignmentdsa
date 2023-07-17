@@ -1,6 +1,6 @@
-package array;
+package arrayandmatrix;
 
-public class Problem2 {
+public class ArrayProblem2 {
     static void evenIndex(int[] arr) {
         for (int i : arr) {
             if (i % 2 == 0) {

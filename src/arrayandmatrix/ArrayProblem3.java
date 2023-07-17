@@ -1,6 +1,6 @@
-package array;
+package arrayandmatrix;
 
-public class Problem3 {
+public class ArrayProblem3 {
     static int maxElement(int[] arr) {
         int max = Integer.MIN_VALUE;
         for (int i : arr) {

@@ -1,6 +1,6 @@
-package array;
+package arrayandmatrix;
 
-public class Problem1 {
+public class ArrayProblem1 {
     static int sumEvenIndex(int[] arr) {
         int n = arr.length;
         int sum = 0;
